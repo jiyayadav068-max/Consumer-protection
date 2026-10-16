@@ -1,10 +1,3 @@
-Here is the complete, updated index.html code. It includes an expanded legal engine featuring full details for all major Indian Consumer Legislation (COPRA 2019, Legal Metrology Act 2009, FSSAI Act 2006, BIS Act 2016, and Essential Commodities Act 1955), detailed provisions, penalties, and explicit information under each consumer right!
-Step-by-Step Update Instructions for QuickEdit:
- * Open QuickEdit on your tablet.
- * Replace all existing text in your index.html file with the code below.
- * Save the file as index.html.
- * Go to your GitHub repository page (Consumer-protection-kisko), tap index.html, tap the pencil edit icon (or upload to replace), paste this new code, and tap Commit changes!
-Complete Single-File Code (index.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +104,7 @@ Complete Single-File Code (index.html)
             margin: 0 auto;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 350px;
+            grid-template-columns: 1fr 380px;
             gap: 1.5rem;
         }
 
@@ -197,7 +190,7 @@ Complete Single-File Code (index.html)
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            height: 600px;
+            height: 650px;
             position: sticky;
             top: 1.5rem;
         }
@@ -235,7 +228,7 @@ Complete Single-File Code (index.html)
         }
 
         .message {
-            max-width: 85%;
+            max-width: 90%;
             padding: 0.75rem 1rem;
             border-radius: 12px;
             font-size: 0.9rem;
@@ -258,6 +251,35 @@ Complete Single-File Code (index.html)
         .chat-controls {
             padding: 1rem;
             border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .quick-chips {
+            display: flex;
+            gap: 0.4rem;
+            overflow-x: auto;
+            padding-bottom: 0.2rem;
+        }
+
+        .chip {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .chip:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+        }
+
+        .input-row {
             display: flex;
             gap: 0.5rem;
         }
@@ -291,7 +313,6 @@ Complete Single-File Code (index.html)
             margin-left: 0.5rem;
         }
 
-        /* Inspector Tool */
         .inspector-box {
             border: 2px dashed var(--border-color);
             padding: 1.5rem;
@@ -325,13 +346,13 @@ Complete Single-File Code (index.html)
 
     <header>
         <div class="logo-container">
-            <i class="fa-solid => fa-scale-balanced logo-icon"></i>
+            <i class="fa-solid fa-scale-balanced logo-icon"></i>
             <div>
                 <h1>Consumer Protection Kiosk</h1>
-                <div class="subtitle">Class 12 Business Studies Exhibition Model | COPRA 2019 & Indian Consumer Laws</div>
+                <div class="subtitle">Class 12 Business Studies Exhibition Model | COPRA 2019 & Legal Frameworks</div>
             </div>
         </div>
-        <button class="nav-btn" onclick="speakCurrentContext()"><i class="fa-solid fa-volume-high"></i> Voice Guide</button>
+        <button class="nav-btn" onclick="speakWelcome()"><i class="fa-solid fa-volume-high"></i> Voice Intro</button>
     </header>
 
     <nav>
@@ -354,32 +375,32 @@ Complete Single-File Code (index.html)
                         <div class="info-box" id="sec-safety">
                             <span class="tag-badge badge-copra">Right #1</span>
                             <h3>Right to Safety</h3>
-                            <p>Protection against goods and services hazardous to life and property. Requires compulsory quality certifications like ISI or FSSAI before sale.</p>
+                            <p>Protection against goods and services hazardous to life and property. Requires compulsory quality certifications like ISI, FSSAI, or Agmark before sale in markets.</p>
                         </div>
                         <div class="info-box" id="sec-information">
                             <span class="tag-badge badge-copra">Right #2</span>
                             <h3>Right to Information</h3>
-                            <p>Right to be informed about quality, quantity, potency, purity, standard, and price of goods to protect against unfair trade practices. Governed under Legal Metrology Rules (MRP, Expiry Date, Ingredients).</p>
+                            <p>Right to be informed about quality, quantity, potency, purity, standard, and price of goods. Governed under Legal Metrology Rules requiring MRP, ingredients, and expiry dates.</p>
                         </div>
                         <div class="info-box" id="sec-choose">
                             <span class="tag-badge badge-copra">Right #3</span>
                             <h3>Right to Choose</h3>
-                            <p>Assurance of access to a variety of goods and services at competitive prices without monopolistic coercion or tie-in sales forced by seller.</p>
+                            <p>Assurance of access to a variety of goods and services at competitive prices without monopolistic coercion or forced tie-in sales by traders.</p>
                         </div>
                         <div class="info-box" id="sec-heard">
                             <span class="tag-badge badge-copra">Right #4</span>
                             <h3>Right to be Heard</h3>
-                            <p>Right to advocate consumer interests in appropriate forums and receive due consideration in consumer grievance cells and consumer forums.</p>
+                            <p>Right to advocate consumer interests in appropriate forums, consumer grievance cells, and receive due consideration before authorities.</p>
                         </div>
                         <div class="info-box" id="sec-redressal">
                             <span class="tag-badge badge-copra">Right #5</span>
                             <h3>Right to Seek Redressal</h3>
-                            <p>Right to seek legal remedy against unfair trade practices or exploitation. Includes replacement, full refund, removal of defects, or compensation for damage.</p>
+                            <p>Right to seek legal remedy against unfair trade practices or exploitation, including replacement, full refund, defect removal, or financial compensation.</p>
                         </div>
                         <div class="info-box" id="sec-education">
                             <span class="tag-badge badge-copra">Right #6</span>
                             <h3>Right to Consumer Education</h3>
-                            <p>Right to acquire knowledge and skill to be an informed consumer throughout life ("Jago Grahak Jago" campaign initiatives).</p>
+                            <p>Right to acquire knowledge and skill to be an informed consumer throughout life, supported by national awareness campaigns like Jago Grahak Jago.</p>
                         </div>
                     </div>
                 </div>
@@ -395,55 +416,43 @@ Complete Single-File Code (index.html)
                         <div class="info-box">
                             <span class="tag-badge badge-copra">Primary Act</span>
                             <h3>Consumer Protection Act (COPRA), 2019</h3>
-                            <p>Replaced the old 1986 Act to modernize legal protections:</p>
+                            <p>Modernized legal protections introducing:</p>
                             <ul>
-                                <li><strong>Central Consumer Protection Authority (CCPA):</strong> Executive body created to recall unsafe products and issue class-action penalties.</li>
-                                <li><strong>E-Commerce Rules:</strong> Mandates country-of-origin disclosure and 48-hour complaint acknowledgment.</li>
-                                <li><strong>Product Liability:</strong> Manufacturers & sellers are directly liable for defective products causing harm.</li>
-                                <li><strong>Mediation Cells:</strong> Attached to District, State, and National commissions for quick settlement.</li>
+                                <li><strong>CCPA:</strong> Central authority to recall hazardous products and penalize misleading ads.</li>
+                                <li><strong>E-Commerce Rules:</strong> Mandates country-of-origin disclosure and quick grievance redressal.</li>
+                                <li><strong>Product Liability:</strong> Strict liability on manufacturers for defective goods.</li>
                             </ul>
                         </div>
 
                         <div class="info-box">
                             <span class="tag-badge badge-fssai">Food Safety</span>
                             <h3>Food Safety & Standards Act (FSSAI), 2006</h3>
-                            <p>Consolidated all food safety laws under one umbrella authority:</p>
+                            <p>Regulates the food sector:</p>
                             <ul>
-                                <li>Mandates 14-digit FSSAI license numbers on every packaged food item.</li>
-                                <li>Strict penalties for adulteration, toxic ingredients, or misleading health claims.</li>
-                                <li>Mandatory Green (Veg) / Red (Non-Veg) logo dots on all packaging.</li>
+                                <li>Mandatory 14-digit FSSAI license numbers on all packaged foods.</li>
+                                <li>Strict penalties against food adulteration and misleading health claims.</li>
+                                <li>Clear Green (Veg) and Red (Non-Veg) dot indicators.</li>
                             </ul>
                         </div>
 
                         <div class="info-box">
                             <span class="tag-badge badge-bis">Quality Standards</span>
                             <h3>Bureau of Indian Standards (BIS) Act, 2016</h3>
-                            <p>Governs product certification, hallmarking, and technical standards:</p>
+                            <p>Governs product standard certification:</p>
                             <ul>
-                                <li><strong>ISI Mark:</strong> Mandatory standard mark for electrical appliances, cylinders, and helmets.</li>
-                                <li><strong>BIS Hallmarking:</strong> Unique 6-digit HUID code compulsory for gold and silver jewelry.</li>
-                                <li><strong>AGMARK:</strong> Quality grade seal for agricultural products (Honey, Ghee, Spices).</li>
+                                <li><strong>ISI Mark:</strong> Mandatory for electrical equipment, gas cylinders, and helmets.</li>
+                                <li><strong>BIS Hallmark:</strong> 6-digit HUID code compulsory for gold jewelry purity.</li>
+                                <li><strong>AGMARK:</strong> Quality seal for agricultural commodities.</li>
                             </ul>
                         </div>
 
                         <div class="info-box">
-                            <span class="tag-badge badge-copra">Packaging & Weights</span>
+                            <span class="tag-badge badge-copra">Weights & Measures</span>
                             <h3>Legal Metrology Act, 2009</h3>
-                            <p>Regulates standard weights, measures, and retail declarations:</p>
+                            <p>Regulates weights, measures, and package declarations:</p>
                             <ul>
                                 <li>Selling above Maximum Retail Price (MRP) is illegal and punishable.</li>
-                                <li>Mandates clear display of Net Quantity, Expiry Date, Manufacturer Address, and Customer Care details.</li>
-                                <li>Prohibits dual-pricing strategy on identical goods.</li>
-                            </ul>
-                        </div>
-
-                        <div class="info-box">
-                            <span class="tag-badge badge-bis">Essential Supplies</span>
-                            <h3>Essential Commodities Act, 1955</h3>
-                            <p>Protects consumers against artificial scarcity and price spikes:</p>
-                            <ul>
-                                <li>Prevents illegal hoarding and black-marketing of essential items (pulses, oils, medicines).</li>
-                                <li>Empowers government to fix price ceilings during national emergencies.</li>
+                                <li>Mandates Net Quantity, Expiry Date, and Customer Care details.</li>
                             </ul>
                         </div>
                     </div>
@@ -458,19 +467,16 @@ Complete Single-File Code (index.html)
                     </div>
                     <div class="grid-2">
                         <div class="info-box">
-                            <h3>District Commission (District Level)</h3>
-                            <p><strong>Jurisdiction:</strong> Claims where value of goods/services paid does NOT exceed <strong>₹1 Crore</strong>.</p>
-                            <p><strong>Appeal:</strong> To State Commission within 45 days if unsatisfied with order.</p>
+                            <h3>District Commission</h3>
+                            <p><strong>Jurisdiction:</strong> Handles claims where the value of goods and services paid does NOT exceed <strong>₹1 Crore</strong>.</p>
                         </div>
                         <div class="info-box">
-                            <h3>State Commission (State Level)</h3>
-                            <p><strong>Jurisdiction:</strong> Claims exceeding <strong>₹1 Crore</strong> up to <strong>₹10 Crore</strong>.</p>
-                            <p><strong>Appeal:</strong> To National Commission within 30 days.</p>
+                            <h3>State Commission</h3>
+                            <p><strong>Jurisdiction:</strong> Handles claims exceeding <strong>₹1 Crore</strong> up to <strong>₹10 Crore</strong>.</p>
                         </div>
                         <div class="info-box">
                             <h3>National Commission (NDRCD)</h3>
-                            <p><strong>Jurisdiction:</strong> Claims exceeding <strong>₹10 Crore</strong>.</p>
-                            <p><strong>Appeal:</strong> Direct appeal to the Supreme Court of India within 30 days on points of law.</p>
+                            <p><strong>Jurisdiction:</strong> Handles major claims exceeding <strong>₹10 Crore</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -482,12 +488,12 @@ Complete Single-File Code (index.html)
                     <div class="card-header">
                         <div class="card-title"><i class="fa-solid fa-microscope"></i> Product Quality & Fake Logo Inspector</div>
                     </div>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Test packaged products or fake quality marks to verify if they follow legal standards under the Legal Metrology & BIS Acts.</p>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Test packaged products or quality marks to verify legal compliance.</p>
                     
                     <div class="inspector-box" onclick="runProductScan('bis')">
                         <i class="fa-solid fa-stamp" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 0.5rem;"></i>
                         <h3>Scan Standard Electrical Product</h3>
-                        <p>Simulates checking ISI Mark & BIS Registration Number on home appliances.</p>
+                        <p>Simulates checking ISI Mark & BIS Registration Number under BIS Act 2016.</p>
                     </div>
 
                     <div class="inspector-box" onclick="runProductScan('fssai')">
@@ -511,20 +517,29 @@ Complete Single-File Code (index.html)
                 <div class="avatar">E</div>
                 <div>
                     <h3 style="font-size: 1rem;">Ezra AI Assistant</h3>
-                    <div class="subtitle" style="font-size: 0.75rem;">Consumer Law Specialist</div>
+                    <div class="subtitle" style="font-size: 0.75rem;">Detailed Voice Legal Expert</div>
                 </div>
-                <button class="tts-btn" onclick="toggleSpeech()"><i class="fa-solid fa-volume-high"></i></button>
+                <button class="tts-btn" onclick="toggleSpeech()"><i class="fa-solid fa-volume-high" id="tts-icon"></i></button>
             </div>
             
             <div class="chat-box" id="chat-box">
                 <div class="message bot">
-                    Hello! I am <strong>Ezra</strong>, your Consumer Protection assistant. Ask me anything about the 6 Consumer Rights, COPRA 2019, FSSAI, BIS standards, or where to file a complaint!
+                    Hello! I am <strong>Ezra</strong>, your detailed consumer law assistant. Ask me anything or tap the quick buttons below to hear full explanations out loud!
                 </div>
             </div>
 
             <div class="chat-controls">
-                <input type="text" class="chat-input" id="chat-input" placeholder="Ask Ezra a question..." onkeypress="handleKeyPress(event)">
-                <button class="btn-send" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                <div class="quick-chips">
+                    <div class="chip" onclick="askQuick('copra')">COPRA 2019</div>
+                    <div class="chip" onclick="askQuick('courts')">3-Tier Courts</div>
+                    <div class="chip" onclick="askQuick('fssai')">FSSAI Rules</div>
+                    <div class="chip" onclick="askQuick('bis')">ISI & Gold BIS</div>
+                    <div class="chip" onclick="askQuick('rights')">6 Rights</div>
+                </div>
+                <div class="input-row">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Ask Ezra any doubt..." onkeypress="handleKeyPress(event)">
+                    <button class="btn-send" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
             </div>
         </div>
     </main>
@@ -560,12 +575,14 @@ Complete Single-File Code (index.html)
             }
         }
 
-        // TEXT TO SPEECH ENGINE
+        // TEXT TO SPEECH SPEECH ENGINE
         let ttsEnabled = true;
 
         function toggleSpeech() {
             ttsEnabled = !ttsEnabled;
-            alert('Voice Assistant: ' + (ttsEnabled ? 'Enabled' : 'Disabled'));
+            const icon = document.getElementById('tts-icon');
+            icon.className = ttsEnabled ? "fa-solid fa-volume-high" : "fa-solid fa-volume-xmark";
+            speakText(ttsEnabled ? "Voice assistant enabled." : "Voice assistant disabled.");
         }
 
         function speakText(text) {
@@ -576,32 +593,49 @@ Complete Single-File Code (index.html)
             window.speechSynthesis.speak(utterance);
         }
 
-        function speakCurrentContext() {
-            speakText("Welcome to the Consumer Protection Kiosk. Explore the 6 Consumer Rights, key acts like COPRA 2019, FSSAI, and Legal Metrology, or ask Ezra for guidance.");
+        function speakWelcome() {
+            speakText("Welcome to the Consumer Protection Kiosk. I am Ezra. You can explore the six consumer rights, key laws like COPRA 2019 and FSSAI, or ask me any question about consumer disputes and remedies.");
         }
 
-        // EZRA AI KNOWLEDGE BASE ENGINE
-        const legalKnowledge = [
-            { keywords: ['copra', '2019', 'act', 'law'], response: "The Consumer Protection Act (COPRA) 2019 replaced the 1986 Act. It introduced the CCPA executive authority, product liability rules, strict penalty for misleading ads, and e-commerce rules." },
-            { keywords: ['district', '1 crore', 'cr'], response: "District Consumer Disputes Redressal Commission hears cases where the value of goods or services paid does not exceed ₹1 Crore." },
-            { keywords: ['state', '10 crore'], response: "State Consumer Disputes Redressal Commission handles claims exceeding ₹1 Crore up to ₹10 Crore." },
-            { keywords: ['national', 'ndrcd', 'above 10'], response: "National Consumer Disputes Redressal Commission handles claims exceeding ₹10 Crore." },
-            { keywords: ['fssai', 'food'], response: "Under the FSSAI Act 2006, all packaged food must contain a 14-digit license number, green/red veg indicator, net weight, ingredient list, and expiry date." },
-            { keywords: ['bis', 'isi', 'hallmark'], response: "BIS Act 2016 certifies product quality. ISI marks are mandatory for safety products like helmets and cylinders, while 6-digit HUID Hallmarking is compulsory for gold." },
-            { keywords: ['mrp', 'metrology', 'price'], response: "Under Legal Metrology Rules, charging above the Maximum Retail Price (MRP) printed on packaging is illegal and punishable by fines." },
-            { keywords: ['rights', '6 rights'], response: "The 6 core consumer rights are: 1. Right to Safety, 2. Right to Information, 3. Right to Choose, 4. Right to be Heard, 5. Right to Redressal, and 6. Right to Consumer Education." }
-        ];
+        // DETAILED KNOWLEDGE BASE FOR COMPREHENSIVE ANSWERS
+        const detailedKnowledge = {
+            'copra': "Under the Consumer Protection Act 2019, which replaced the 1986 Act, consumers enjoy modern protections. It established the Central Consumer Protection Authority, known as CCPA, to recall dangerous products and penalize misleading advertisements. It also introduced strict product liability rules making manufacturers accountable for damages, and mandated fast-track consumer mediation cells.",
+            'courts': "The 3-tier consumer redressal mechanism under COPRA 2019 depends on the claim value. The District Commission handles claims up to 1 Crore rupees. The State Commission handles claims from 1 Crore up to 10 Crore rupees. The National Commission handles major claims exceeding 10 Crore rupees.",
+            'fssai': "Under the Food Safety and Standards Act 2006, all food business operators must possess a valid 14-digit FSSAI license number printed on packaging. Packages must also feature the green dot for vegetarian or red dot for non-vegetarian products, ingredient lists, net weight, and clear expiry dates to prevent food adulteration.",
+            'bis': "The Bureau of Indian Standards Act 2016 regulates quality markings. The ISI mark is mandatory for industrial and safety goods like gas cylinders and helmets. Furthermore, a unique 6-digit Hallmark Unique Identification or HUID code is compulsory for gold and silver jewelry to protect consumers from purity fraud.",
+            'rights': "The 6 core consumer rights guaranteed under Indian law are: First, Right to Safety against hazardous goods. Second, Right to Information regarding price, quality, and ingredients. Third, Right to Choose among competitive goods. Fourth, Right to be Heard in consumer forums. Fifth, Right to Seek Redressal for compensation or refunds. Sixth, Right to Consumer Education.",
+            'default': "Under Indian Consumer Law and COPRA 2019, consumers have robust legal protections against unfair trade practices. You can file a complaint if you are charged above the Maximum Retail Price, sold defective goods, or provided misleading services. Ask me about district courts, FSSAI regulations, or the six consumer rights!"
+        };
+
+        function askQuick(key) {
+            const answer = detailedKnowledge[key] || detailedKnowledge['default'];
+            appendMessage('user', `Tell me about ${key.toUpperCase()}`);
+            appendMessage('bot', answer);
+            speakText(answer);
+        }
 
         function sendMessage() {
             const inputEl = document.getElementById('chat-input');
-            const userMsg = inputEl.value.trim();
+            const userMsg = inputEl.value.trim().toLowerCase();
             if (!userMsg) return;
 
-            appendMessage('user', userMsg);
+            appendMessage('user', inputEl.value);
             inputEl.value = '';
 
             setTimeout(() => {
-                const botReply = generateEzraReply(userMsg.toLowerCase());
+                let botReply = detailedKnowledge['default'];
+                if (userMsg.includes('copra') || userMsg.includes('2019') || userMsg.includes('act')) {
+                    botReply = detailedKnowledge['copra'];
+                } else if (userMsg.includes('court') || userMsg.includes('district') || userMsg.includes('state') || userMsg.includes('national') || userMsg.includes('jurisdiction')) {
+                    botReply = detailedKnowledge['courts'];
+                } else if (userMsg.includes('fssai') || userMsg.includes('food') || userMsg.includes('license')) {
+                    botReply = detailedKnowledge['fssai'];
+                } else if (userMsg.includes('bis') || userMsg.includes('isi') || userMsg.includes('gold') || userMsg.includes('hallmark')) {
+                    botReply = detailedKnowledge['bis'];
+                } else if (userMsg.includes('right') || userMsg.includes('safety') || userMsg.includes('choose')) {
+                    botReply = detailedKnowledge['rights'];
+                }
+
                 appendMessage('bot', botReply);
                 speakText(botReply);
             }, 500);
@@ -620,15 +654,6 @@ Complete Single-File Code (index.html)
             chatBox.scrollTop = chatBox.scrollHeight;
         }
 
-        function generateEzraReply(query) {
-            for (let item of legalKnowledge) {
-                if (item.keywords.some(k => query.includes(k))) {
-                    return item.response;
-                }
-            }
-            return "Under COPRA 2019 and Indian Consumer Law, consumers have rights to safety, full label transparency, and 3-tier court redressal. You can ask me about District/State courts, FSSAI food rules, or BIS ISI marks!";
-        }
-
         // INSPECTOR SIMULATOR
         function runProductScan(type) {
             const resBox = document.getElementById('scan-results');
@@ -638,16 +663,17 @@ Complete Single-File Code (index.html)
             resBox.style.display = 'block';
 
             if (type === 'bis') {
+                const msg = "Genuine BIS ISI Seal Verified. Standard IS 302-2-3 checked. The product satisfies electrical safety standards under the BIS Act 2016.";
                 resTitle.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i> Genuine BIS ISI Seal Verified';
-                resDetails.innerHTML = '<strong>Standard:</strong> IS 302-2-3 (Electric Irons)<br><strong>Status:</strong> Valid Registration Number. Product satisfies safety standard under BIS Act 2016.';
-                speakText("Genuine BIS ISI Seal Verified. Product satisfies safety standards.");
+                resDetails.innerHTML = '<strong>Standard:</strong> IS 302-2-3<br><strong>Status:</strong> Valid Registration. Complies with BIS Act 2016 safety requirements.';
+                speakText(msg);
             } else if (type === 'fssai') {
+                const msg = "FSSAI Label compliance verified. License number 10012022000123 found. All mandatory declarations including green veg symbol, MRP, and expiry date are present.";
                 resTitle.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-gold);"></i> FSSAI Label Compliance Check';
-                resDetails.innerHTML = '<strong>FSSAI Lic No:</strong> 10012022000123<br><strong>Declarations Present:</strong> Green Veg Symbol, MRP, Best Before Date, Manufacturer Address. Complies with Legal Metrology & FSSAI Act.';
-                speakText("FSSAI Label compliance verified. All mandatory packaging disclosures present.");
+                resDetails.innerHTML = '<strong>FSSAI Lic No:</strong> 10012022000123<br><strong>Status:</strong> Complies with Food Safety & Standards Act 2006.';
+                speakText(msg);
             }
         }
     </script>
 </body>
 </html>
-
