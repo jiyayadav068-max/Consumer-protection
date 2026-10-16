@@ -1,0 +1,653 @@
+Here is the complete, updated index.html code. It includes an expanded legal engine featuring full details for all major Indian Consumer Legislation (COPRA 2019, Legal Metrology Act 2009, FSSAI Act 2006, BIS Act 2016, and Essential Commodities Act 1955), detailed provisions, penalties, and explicit information under each consumer right!
+Step-by-Step Update Instructions for QuickEdit:
+ * Open QuickEdit on your tablet.
+ * Replace all existing text in your index.html file with the code below.
+ * Save the file as index.html.
+ * Go to your GitHub repository page (Consumer-protection-kisko), tap index.html, tap the pencil edit icon (or upload to replace), paste this new code, and tap Commit changes!
+Complete Single-File Code (index.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Protection Kiosk - Interactive Legal Kiosk</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --card-bg: #334155;
+            --accent-gold: #f59e0b;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --text-light: #f8fafc;
+            --text-dim: #94a3b8;
+            --border-color: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--bg-secondary);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--accent-gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        nav {
+            display: flex;
+            background-color: var(--bg-secondary);
+            padding: 0.5rem 1rem;
+            gap: 0.5rem;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--card-bg);
+            color: var(--accent-gold);
+        }
+
+        main {
+            flex: 1;
+            padding: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 992px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .info-box {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .info-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .info-box p, .info-box ul {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .info-box ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Ezra Assistant Styles */
+        .assistant-panel {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            position: sticky;
+            top: 1.5rem;
+        }
+
+        .assistant-header {
+            padding: 1rem;
+            background-color: var(--card-bg);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--bg-primary);
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .message.bot {
+            background-color: var(--card-bg);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .message.user {
+            background-color: var(--accent-blue);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-controls {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            color: var(--text-light);
+            outline: none;
+        }
+
+        .btn-send {
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tts-btn {
+            background: transparent;
+            border: none;
+            color: var(--accent-gold);
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Inspector Tool */
+        .inspector-box {
+            border: 2px dashed var(--border-color);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .inspector-box:hover {
+            border-color: var(--accent-gold);
+            background-color: rgba(245, 158, 11, 0.05);
+        }
+
+        .tag-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-copra { background-color: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+        .badge-fssai { background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+        .badge-bis { background-color: rgba(245, 158, 11, 0.2); color: var(--accent-gold); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid => fa-scale-balanced logo-icon"></i>
+            <div>
+                <h1>Consumer Protection Kiosk</h1>
+                <div class="subtitle">Class 12 Business Studies Exhibition Model | COPRA 2019 & Indian Consumer Laws</div>
+            </div>
+        </div>
+        <button class="nav-btn" onclick="speakCurrentContext()"><i class="fa-solid fa-volume-high"></i> Voice Guide</button>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="switchTab('rights')"><i class="fa-solid fa-shield-halved"></i> 6 Core Rights</button>
+        <button class="nav-btn" onclick="switchTab('acts')"><i class="fa-solid fa-book-bookmark"></i> Consumer Acts & Laws</button>
+        <button class="nav-btn" onclick="switchTab('redressal')"><i class="fa-solid fa-gavel"></i> Redressal Machinery</button>
+        <button class="nav-btn" onclick="switchTab('inspector')"><i class="fa-solid fa-magnifying-glass"></i> Fake Label Inspector</button>
+    </nav>
+
+    <main>
+        <div class="content-area">
+            
+            <!-- SECTION 1: 6 CORE RIGHTS -->
+            <div id="rights-tab" class="tab-content active">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-list-check"></i> Consumer Rights under COPRA 2019</div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="info-box" id="sec-safety">
+                            <span class="tag-badge badge-copra">Right #1</span>
+                            <h3>Right to Safety</h3>
+                            <p>Protection against goods and services hazardous to life and property. Requires compulsory quality certifications like ISI or FSSAI before sale.</p>
+                        </div>
+                        <div class="info-box" id="sec-information">
+                            <span class="tag-badge badge-copra">Right #2</span>
+                            <h3>Right to Information</h3>
+                            <p>Right to be informed about quality, quantity, potency, purity, standard, and price of goods to protect against unfair trade practices. Governed under Legal Metrology Rules (MRP, Expiry Date, Ingredients).</p>
+                        </div>
+                        <div class="info-box" id="sec-choose">
+                            <span class="tag-badge badge-copra">Right #3</span>
+                            <h3>Right to Choose</h3>
+                            <p>Assurance of access to a variety of goods and services at competitive prices without monopolistic coercion or tie-in sales forced by seller.</p>
+                        </div>
+                        <div class="info-box" id="sec-heard">
+                            <span class="tag-badge badge-copra">Right #4</span>
+                            <h3>Right to be Heard</h3>
+                            <p>Right to advocate consumer interests in appropriate forums and receive due consideration in consumer grievance cells and consumer forums.</p>
+                        </div>
+                        <div class="info-box" id="sec-redressal">
+                            <span class="tag-badge badge-copra">Right #5</span>
+                            <h3>Right to Seek Redressal</h3>
+                            <p>Right to seek legal remedy against unfair trade practices or exploitation. Includes replacement, full refund, removal of defects, or compensation for damage.</p>
+                        </div>
+                        <div class="info-box" id="sec-education">
+                            <span class="tag-badge badge-copra">Right #6</span>
+                            <h3>Right to Consumer Education</h3>
+                            <p>Right to acquire knowledge and skill to be an informed consumer throughout life ("Jago Grahak Jago" campaign initiatives).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: COMPREHENSIVE ACTS & LEGISLATION -->
+            <div id="acts-tab" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-scale-unbalanced-flip"></i> Key Indian Consumer Acts & Frameworks</div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="info-box">
+                            <span class="tag-badge badge-copra">Primary Act</span>
+                            <h3>Consumer Protection Act (COPRA), 2019</h3>
+                            <p>Replaced the old 1986 Act to modernize legal protections:</p>
+                            <ul>
+                                <li><strong>Central Consumer Protection Authority (CCPA):</strong> Executive body created to recall unsafe products and issue class-action penalties.</li>
+                                <li><strong>E-Commerce Rules:</strong> Mandates country-of-origin disclosure and 48-hour complaint acknowledgment.</li>
+                                <li><strong>Product Liability:</strong> Manufacturers & sellers are directly liable for defective products causing harm.</li>
+                                <li><strong>Mediation Cells:</strong> Attached to District, State, and National commissions for quick settlement.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <span class="tag-badge badge-fssai">Food Safety</span>
+                            <h3>Food Safety & Standards Act (FSSAI), 2006</h3>
+                            <p>Consolidated all food safety laws under one umbrella authority:</p>
+                            <ul>
+                                <li>Mandates 14-digit FSSAI license numbers on every packaged food item.</li>
+                                <li>Strict penalties for adulteration, toxic ingredients, or misleading health claims.</li>
+                                <li>Mandatory Green (Veg) / Red (Non-Veg) logo dots on all packaging.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <span class="tag-badge badge-bis">Quality Standards</span>
+                            <h3>Bureau of Indian Standards (BIS) Act, 2016</h3>
+                            <p>Governs product certification, hallmarking, and technical standards:</p>
+                            <ul>
+                                <li><strong>ISI Mark:</strong> Mandatory standard mark for electrical appliances, cylinders, and helmets.</li>
+                                <li><strong>BIS Hallmarking:</strong> Unique 6-digit HUID code compulsory for gold and silver jewelry.</li>
+                                <li><strong>AGMARK:</strong> Quality grade seal for agricultural products (Honey, Ghee, Spices).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <span class="tag-badge badge-copra">Packaging & Weights</span>
+                            <h3>Legal Metrology Act, 2009</h3>
+                            <p>Regulates standard weights, measures, and retail declarations:</p>
+                            <ul>
+                                <li>Selling above Maximum Retail Price (MRP) is illegal and punishable.</li>
+                                <li>Mandates clear display of Net Quantity, Expiry Date, Manufacturer Address, and Customer Care details.</li>
+                                <li>Prohibits dual-pricing strategy on identical goods.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <span class="tag-badge badge-bis">Essential Supplies</span>
+                            <h3>Essential Commodities Act, 1955</h3>
+                            <p>Protects consumers against artificial scarcity and price spikes:</p>
+                            <ul>
+                                <li>Prevents illegal hoarding and black-marketing of essential items (pulses, oils, medicines).</li>
+                                <li>Empowers government to fix price ceilings during national emergencies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: REDRESSAL MACHINERY -->
+            <div id="redressal-tab" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-landmark"></i> 3-Tier Pecuniary Jurisdiction under COPRA 2019</div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="info-box">
+                            <h3>District Commission (District Level)</h3>
+                            <p><strong>Jurisdiction:</strong> Claims where value of goods/services paid does NOT exceed <strong>₹1 Crore</strong>.</p>
+                            <p><strong>Appeal:</strong> To State Commission within 45 days if unsatisfied with order.</p>
+                        </div>
+                        <div class="info-box">
+                            <h3>State Commission (State Level)</h3>
+                            <p><strong>Jurisdiction:</strong> Claims exceeding <strong>₹1 Crore</strong> up to <strong>₹10 Crore</strong>.</p>
+                            <p><strong>Appeal:</strong> To National Commission within 30 days.</p>
+                        </div>
+                        <div class="info-box">
+                            <h3>National Commission (NDRCD)</h3>
+                            <p><strong>Jurisdiction:</strong> Claims exceeding <strong>₹10 Crore</strong>.</p>
+                            <p><strong>Appeal:</strong> Direct appeal to the Supreme Court of India within 30 days on points of law.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: FAKE LABEL INSPECTOR -->
+            <div id="inspector-tab" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-microscope"></i> Product Quality & Fake Logo Inspector</div>
+                    </div>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Test packaged products or fake quality marks to verify if they follow legal standards under the Legal Metrology & BIS Acts.</p>
+                    
+                    <div class="inspector-box" onclick="runProductScan('bis')">
+                        <i class="fa-solid fa-stamp" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 0.5rem;"></i>
+                        <h3>Scan Standard Electrical Product</h3>
+                        <p>Simulates checking ISI Mark & BIS Registration Number on home appliances.</p>
+                    </div>
+
+                    <div class="inspector-box" onclick="runProductScan('fssai')">
+                        <i class="fa-solid fa-utensils" style="font-size: 2rem; color: var(--accent-green); margin-bottom: 0.5rem;"></i>
+                        <h3>Scan Food Packaging Label</h3>
+                        <p>Simulates checking 14-Digit FSSAI License, Veg/Non-Veg logo, and Expiry Date.</p>
+                    </div>
+
+                    <div id="scan-results" style="margin-top: 1rem; display: none;" class="info-box">
+                        <h3 id="scan-title">Inspection Status</h3>
+                        <p id="scan-details"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: AI ASSISTANT EZRA -->
+        <div class="assistant-panel">
+            <div class="assistant-header">
+                <div class="avatar">E</div>
+                <div>
+                    <h3 style="font-size: 1rem;">Ezra AI Assistant</h3>
+                    <div class="subtitle" style="font-size: 0.75rem;">Consumer Law Specialist</div>
+                </div>
+                <button class="tts-btn" onclick="toggleSpeech()"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            
+            <div class="chat-box" id="chat-box">
+                <div class="message bot">
+                    Hello! I am <strong>Ezra</strong>, your Consumer Protection assistant. Ask me anything about the 6 Consumer Rights, COPRA 2019, FSSAI, BIS standards, or where to file a complaint!
+                </div>
+            </div>
+
+            <div class="chat-controls">
+                <input type="text" class="chat-input" id="chat-input" placeholder="Ask Ezra a question..." onkeypress="handleKeyPress(event)">
+                <button class="btn-send" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // NAVIGATION & ROUTING ENGINE
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // HASH QR CODE ROUTING LOGIC
+        window.addEventListener('load', handleHashRoute);
+        window.addEventListener('hashchange', handleHashRoute);
+
+        function handleHashRoute() {
+            const hash = window.location.hash.replace('#', '');
+            if (!hash) return;
+
+            switchTab('rights');
+            const targetEl = document.getElementById('sec-' + hash);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+                targetEl.style.border = '2px solid var(--accent-gold)';
+                setTimeout(() => targetEl.style.border = '', 3000);
+                
+                const title = targetEl.querySelector('h3').innerText;
+                const desc = targetEl.querySelector('p').innerText;
+                speakText(`${title}. ${desc}`);
+            }
+        }
+
+        // TEXT TO SPEECH ENGINE
+        let ttsEnabled = true;
+
+        function toggleSpeech() {
+            ttsEnabled = !ttsEnabled;
+            alert('Voice Assistant: ' + (ttsEnabled ? 'Enabled' : 'Disabled'));
+        }
+
+        function speakText(text) {
+            if (!ttsEnabled || !('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.95;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function speakCurrentContext() {
+            speakText("Welcome to the Consumer Protection Kiosk. Explore the 6 Consumer Rights, key acts like COPRA 2019, FSSAI, and Legal Metrology, or ask Ezra for guidance.");
+        }
+
+        // EZRA AI KNOWLEDGE BASE ENGINE
+        const legalKnowledge = [
+            { keywords: ['copra', '2019', 'act', 'law'], response: "The Consumer Protection Act (COPRA) 2019 replaced the 1986 Act. It introduced the CCPA executive authority, product liability rules, strict penalty for misleading ads, and e-commerce rules." },
+            { keywords: ['district', '1 crore', 'cr'], response: "District Consumer Disputes Redressal Commission hears cases where the value of goods or services paid does not exceed ₹1 Crore." },
+            { keywords: ['state', '10 crore'], response: "State Consumer Disputes Redressal Commission handles claims exceeding ₹1 Crore up to ₹10 Crore." },
+            { keywords: ['national', 'ndrcd', 'above 10'], response: "National Consumer Disputes Redressal Commission handles claims exceeding ₹10 Crore." },
+            { keywords: ['fssai', 'food'], response: "Under the FSSAI Act 2006, all packaged food must contain a 14-digit license number, green/red veg indicator, net weight, ingredient list, and expiry date." },
+            { keywords: ['bis', 'isi', 'hallmark'], response: "BIS Act 2016 certifies product quality. ISI marks are mandatory for safety products like helmets and cylinders, while 6-digit HUID Hallmarking is compulsory for gold." },
+            { keywords: ['mrp', 'metrology', 'price'], response: "Under Legal Metrology Rules, charging above the Maximum Retail Price (MRP) printed on packaging is illegal and punishable by fines." },
+            { keywords: ['rights', '6 rights'], response: "The 6 core consumer rights are: 1. Right to Safety, 2. Right to Information, 3. Right to Choose, 4. Right to be Heard, 5. Right to Redressal, and 6. Right to Consumer Education." }
+        ];
+
+        function sendMessage() {
+            const inputEl = document.getElementById('chat-input');
+            const userMsg = inputEl.value.trim();
+            if (!userMsg) return;
+
+            appendMessage('user', userMsg);
+            inputEl.value = '';
+
+            setTimeout(() => {
+                const botReply = generateEzraReply(userMsg.toLowerCase());
+                appendMessage('bot', botReply);
+                speakText(botReply);
+            }, 500);
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function appendMessage(sender, text) {
+            const chatBox = document.getElementById('chat-box');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            msgDiv.innerHTML = text;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function generateEzraReply(query) {
+            for (let item of legalKnowledge) {
+                if (item.keywords.some(k => query.includes(k))) {
+                    return item.response;
+                }
+            }
+            return "Under COPRA 2019 and Indian Consumer Law, consumers have rights to safety, full label transparency, and 3-tier court redressal. You can ask me about District/State courts, FSSAI food rules, or BIS ISI marks!";
+        }
+
+        // INSPECTOR SIMULATOR
+        function runProductScan(type) {
+            const resBox = document.getElementById('scan-results');
+            const resTitle = document.getElementById('scan-title');
+            const resDetails = document.getElementById('scan-details');
+
+            resBox.style.display = 'block';
+
+            if (type === 'bis') {
+                resTitle.innerHTML = '<i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i> Genuine BIS ISI Seal Verified';
+                resDetails.innerHTML = '<strong>Standard:</strong> IS 302-2-3 (Electric Irons)<br><strong>Status:</strong> Valid Registration Number. Product satisfies safety standard under BIS Act 2016.';
+                speakText("Genuine BIS ISI Seal Verified. Product satisfies safety standards.");
+            } else if (type === 'fssai') {
+                resTitle.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-gold);"></i> FSSAI Label Compliance Check';
+                resDetails.innerHTML = '<strong>FSSAI Lic No:</strong> 10012022000123<br><strong>Declarations Present:</strong> Green Veg Symbol, MRP, Best Before Date, Manufacturer Address. Complies with Legal Metrology & FSSAI Act.';
+                speakText("FSSAI Label compliance verified. All mandatory packaging disclosures present.");
+            }
+        }
+    </script>
+</body>
+</html>
+
